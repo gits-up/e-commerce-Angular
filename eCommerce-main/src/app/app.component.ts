@@ -32,7 +32,6 @@ export class AppComponent implements OnInit {
       this.cartProducts.forEach(element => {
           this.subTotal =  this.subTotal + element.productPrice;
       });
-      //debugger;
     })
   }
 }
