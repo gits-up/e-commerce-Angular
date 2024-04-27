@@ -13,8 +13,7 @@ export class AppComponent implements OnInit {
   subTotal: number = 0;
   constructor(private productService: ProductService, private router: Router) {
     this.productService.cartAddedSubject.subscribe(res=> {
-      debugger;
-      this.loadCart();
+      //this.loadCart();
     })
   }
 
