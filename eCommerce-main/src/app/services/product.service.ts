@@ -13,23 +13,23 @@ export class ProductService {
 
   getAllProducts(): Observable<any[]> {
     debugger;
-    return this.http.get<any[]>("http://onlinetestapi.gerasim.in/api/Ecomm/GetAllProducts");
+    return this.http.get<any[]>("https://onlinetestapi.gerasim.in/api/Ecomm/GetAllProducts");
   }
 
   addToCart(obj: any) : Observable<any> {
     debugger;
-    return this.http.post<any>("http://onlinetestapi.gerasim.in/api/Ecomm/AddToCart",obj);
+    return this.http.post<any>("https://onlinetestapi.gerasim.in/api/Ecomm/AddToCart",obj);
   }
 
   getCartItemsByCustId(custId: number) : Observable<any[]>  {
-    return this.http.get<any[]>("http://onlinetestapi.gerasim.in/api/Ecomm/GetCartProductsByCustomerId?id=" + custId);
+    return this.http.get<any[]>("https://onlinetestapi.gerasim.in/api/Ecomm/GetCartProductsByCustomerId?id=" + custId);
   }
    removeCartItemById(cartId: number) : Observable<any[]>  {
-    return this.http.get<any[]>("http://onlinetestapi.gerasim.in/api/Ecomm/DeleteProductFromCartById?id=" + cartId);
+    return this.http.get<any[]>("https://onlinetestapi.gerasim.in/api/Ecomm/DeleteProductFromCartById?id=" + cartId);
   }
 
   makeSale(obj: any) : Observable<any> {
     debugger;
-    return this.http.post<any>("http://onlinetestapi.gerasim.in/api/Ecomm/AddNewSale",obj);
+    return this.http.post<any>("https://onlinetestapi.gerasim.in/api/Ecomm/AddNewSale",obj);
   }
 }

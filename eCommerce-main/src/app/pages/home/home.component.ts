@@ -14,8 +14,8 @@ export class HomeComponent implements OnInit{
     "CustId": 1,
     "ProductId": 0,
     "Quantity": 0,
-    "AddedDate": "2023-04-27T07:12:40.926Z"
-  };
+    "AddedDate": "2024-04-27T12:05:02.064Z"
+  }
   constructor(private productService: ProductService) {
 
   }
