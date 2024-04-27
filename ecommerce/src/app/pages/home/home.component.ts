@@ -10,17 +10,17 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent {   //add "implements OnInit"
 
-  productList: any[] = [];
-  constructor(private productService: ProductService) {}
-  ngOnInit(): void {
-    this.loadAllProducts();
-  }
+  // productList: any[] = [];
+  // constructor(private productService: ProductService) {}
+  // ngOnInit(): void {
+  //   this.loadAllProducts();
+  // }
   
-  loadAllProducts() {
-    this.productService.getAllProducts().subscribe((result: any)=>{
-      this.productList = result.data;
-    })
-  }
+  // loadAllProducts() {
+  //   this.productService.getAllProducts().subscribe((result: any)=>{
+  //     this.productList = result.data;
+  //   })
+  // }
 }

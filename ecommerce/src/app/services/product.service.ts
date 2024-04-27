@@ -9,9 +9,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class ProductService {
 
-  constructor(private http: HttpClient) { }
+  // constructor(private http: HttpClient) { }
 
-  getAllProducts(): Observable<any[]> {
-    return this.http.get<any[]>("https://onlinetestapi.gerasim.in/api/Ecomm/GetAllProducts");
-  }
+  // getAllProducts(): Observable<any[]> {
+  //   return this.http.get<any[]>("https://onlinetestapi.gerasim.in/api/Ecomm/GetAllProducts");
+  // }
 }
