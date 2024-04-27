@@ -20,12 +20,12 @@ export class HomeComponent implements OnInit{
 
   }
   ngOnInit(): void {
-    debugger;
+    //debugger;
     this.loadAllProducts();
   }
 
   loadAllProducts() {
-    debugger;
+    //debugger;
     this.productService.getAllProducts().subscribe((result: any)=>{
       this.productList = result.data;
     })
