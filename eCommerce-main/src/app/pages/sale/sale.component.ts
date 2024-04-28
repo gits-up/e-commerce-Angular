@@ -10,6 +10,7 @@ export class SaleComponent implements OnInit {
 
   cartProducts: any[] = [];
   subTotal: number = 0;
+  itemsInCart: number = 0;
   saleObj: any =  {
       "SaleId": 0,
       "CustId": 1,
@@ -24,7 +25,6 @@ export class SaleComponent implements OnInit {
       "DeliveryLandMark": "ATM"
   };
   constructor(private productService: ProductService) {
-    debugger;
   }
   ngOnInit(): void {
     this.loadCart();
@@ -32,12 +32,15 @@ export class SaleComponent implements OnInit {
 
   loadCart() {
     this.subTotal = 0;
+    this.itemsInCart = 0;
     this.productService.getCartItemsByCustId(1).subscribe((res: any) => {
       this.cartProducts = res.data;
       this.cartProducts.forEach(element => {
         this.subTotal = this.subTotal + element.productPrice;
       });
-      debugger;
+      this.cartProducts.forEach(element => {
+        this.itemsInCart = this.itemsInCart + 1;
+      });
     })
   }
   RemoveItem(id: number) {

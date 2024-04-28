@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   title = 'ecommerce';
   cartProducts: any[] = [];
   subTotal: number = 0;
+  itemsInCart: number = 0;
   constructor(private productService: ProductService, private router: Router) {
     this.productService.cartAddedSubject.subscribe(res=> {
       this.loadCart();
@@ -26,11 +27,15 @@ export class AppComponent implements OnInit {
 
   loadCart() {
     this.subTotal = 0;
+    this.itemsInCart = 0;
     this.productService.getCartItemsByCustId(1).subscribe((res: any)=> {
       this.cartProducts = res.data;
       this.cartProducts.forEach(element => {
           this.subTotal =  this.subTotal + element.productPrice;
       });
+      this.cartProducts.forEach(element => {
+        this.itemsInCart =  this.itemsInCart + 1;
+    });
     })
   }
 }
