@@ -17,12 +17,12 @@ export class SaleComponent implements OnInit {
       "SaleDate": new Date(),
       "TotalInvoiceAmount": 0,
       "Discount": 0,
-      "PaymentNaration": "Patmm ",
-      "DeliveryAddress1": "Plot nio 122",
-      "DeliveryAddress2": "Ner ATM",
-      "DeliveryCity": "Pune",
-      "DeliveryPinCode": "440033",
-      "DeliveryLandMark": "ATM"
+      "PaymentNaration": "Paytm",
+      "DeliveryAddress1": "Plot no 123",
+      "DeliveryAddress2": "Near Railway Station",
+      "DeliveryCity": "Dhanbad",
+      "DeliveryPinCode": "826001",
+      "DeliveryLandMark": "Cinema Hall",
   };
   constructor(private productService: ProductService) {
   }
@@ -56,7 +56,7 @@ export class SaleComponent implements OnInit {
     this.productService.cartAddedSubject.next(true);
     this.productService.makeSale( this.saleObj).subscribe((res: any) => {
       if (res.result) {
-        alert("Sale Success")
+        alert("Success")
         this.loadCart();
         this.productService.cartAddedSubject.next(true);
       }
